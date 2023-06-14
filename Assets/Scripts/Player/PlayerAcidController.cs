@@ -25,7 +25,7 @@ public class PlayerAcidController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (acidCount > 0 && movement.IsGrounded)
+        if (enabled && acidCount > 0)// && movement.IsGrounded)
         {
             damageMachine.Forward(Time.fixedDeltaTime);
         }

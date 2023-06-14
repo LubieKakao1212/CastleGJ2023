@@ -16,7 +16,8 @@ public class Explosion : MonoBehaviour
     [SerializeField]
     private GameObject acid;
 
-    private Vector2 direction;
+    [HideInInspector]
+    public Vector2 direction;
 
     public void Init(Vector2 direction)
     {

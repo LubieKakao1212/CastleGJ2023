@@ -18,11 +18,25 @@ public class ShootingController : MonoBehaviour
 
     private void Start()
     {
+        enabled = false;
+    }
+
+    private void OnEnable()
+    {
         InputManager.Shoot += Shoot;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.Shoot -= Shoot;
     }
 
     public void Shoot()
     {
+        if (!enabled)
+        {
+            return;
+        }
         var dir = -tip.up;
         var hit = Physics2D.Raycast(transform.position, dir, range, targetLayerMask.value);
 
@@ -31,6 +45,13 @@ public class ShootingController : MonoBehaviour
         if (hit.collider != null)
         {
             Instantiate(explosion, hit.point + ((Vector2)dir) * 0.01f, Quaternion.identity).Init(hit.normal);
+
+            var wall = hit.collider.GetComponent<Wall>();
+
+            if (wall != null && !wall.Equals(null))
+            {
+                wall.Hit(hit, this);
+            }
         }
     }
 }

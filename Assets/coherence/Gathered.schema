@@ -1,0 +1,32 @@
+component Explosion_id1_Explosion_1780179320716845973
+  direction Vector2 [compression "None"]
+
+component Player_id0_PlayerHP_520862196960591170
+  SyncHP Int [bits "32", range-min "-2147483648", range-max "2147483647"]
+  SyncMaxHP Int [bits "32", range-min "-2147483648", range-max "2147483647"]
+
+component Player_id0_UnityEngine__char_46_Transform_2639605840214257464
+  rotation Quaternion [bits "32"]
+
+archetype Acid_fbb597bf757ae124a9420852a332f640
+  lod 0
+    WorldPosition 
+      value [compression "None"]
+
+archetype Explosion_0c25a96a0fb615348b57d8131f1fc940
+  lod 0
+    WorldPosition 
+      value [compression "None"]
+    Explosion_id1_Explosion_1780179320716845973 
+      value [compression "None"]
+
+archetype Player_3b896e424d82c884d9d345e909e13ea9
+  lod 0
+    WorldPosition 
+      value [compression "None"]
+    Player_id0_PlayerHP_520862196960591170 
+      number [bits "32", range-min "-2147483648", range-max "2147483647"]
+      number [bits "32", range-min "-2147483648", range-max "2147483647"]
+    Player_id0_UnityEngine__char_46_Transform_2639605840214257464 
+      value [bits "32"]
+

@@ -1,11 +1,28 @@
+using Coherence.Toolkit;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Utils;
 
 public class PlayerHP : MonoBehaviour
 {
+    [Sync]
+    public int SyncHP
+    {
+        get => hp;
+        set
+        {
+            hp = value;
+            HpChanged?.Invoke();
+        }
+    }
+
+    [Sync]
+    public int SyncMaxHP
+    {
+        get => maxHP;
+        set => maxHP = value;
+    }
+
     public event Action HpChanged;
 
     public float Ratio => hp / (float)maxHP;
@@ -29,13 +46,17 @@ public class PlayerHP : MonoBehaviour
         machine = new AutoTimeMachine(() =>
         {
             hp += regenAmount;
+
+            hp = Mathf.Min(hp, maxHP);
+
             HpChanged?.Invoke();
         }, regenCooldown);
     }
 
     private void FixedUpdate()
     {
-        machine.Forward(Time.fixedDeltaTime);
+        if(enabled)
+            machine.Forward(Time.fixedDeltaTime);
     }
     
     public void DealDamage(int damage)
@@ -57,6 +78,12 @@ public class PlayerHP : MonoBehaviour
     {
         Debug.Log("Player dies");
 
-        Destroy(this.gameObject);
+        Destroy(gameObject);
+
+        Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }
