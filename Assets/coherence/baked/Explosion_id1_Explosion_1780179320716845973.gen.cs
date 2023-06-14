@@ -18,10 +18,11 @@ namespace Coherence.Generated
 	public struct Explosion_id1_Explosion_1780179320716845973 : ICoherenceComponentData
 	{
 		public Vector2 direction;
+		public SerializeEntityID owner;
 
 		public override string ToString()
 		{
-			return $"Explosion_id1_Explosion_1780179320716845973(direction: {direction})";
+			return $"Explosion_id1_Explosion_1780179320716845973(direction: {direction}, owner: {owner})";
 		}
 
 		public uint GetComponentType() => Definition.InternalExplosion_id1_Explosion_1780179320716845973;
@@ -49,6 +50,12 @@ namespace Coherence.Generated
 				direction = other.direction;
 			}
 			mask >>= 1;
+			if ((mask & 0x01) != 0)
+			{
+				Frame = other.Frame;
+				owner = other.owner;
+			}
+			mask >>= 1;
 			return this;
 		}
 
@@ -65,6 +72,11 @@ namespace Coherence.Generated
 				bitStream.WriteVector2((data.direction.ToCoreVector2()), FloatMeta.NoCompression());
 			}
 			mask >>= 1;
+			if (bitStream.WriteMask((mask & 0x01) != 0))
+			{
+				bitStream.WriteEntity(data.owner);
+			}
+			mask >>= 1;
 		}
 
 		public static (Explosion_id1_Explosion_1780179320716845973, uint, uint?) Deserialize(InProtocolBitStream bitStream)
@@ -77,6 +89,11 @@ namespace Coherence.Generated
 				val.direction = (bitStream.ReadVector2(FloatMeta.NoCompression())).ToUnityVector2();
 				mask |= 0b00000000000000000000000000000001;
 			}
+			if (bitStream.ReadMask())
+			{
+				val.owner = bitStream.ReadEntity();
+				mask |= 0b00000000000000000000000000000010;
+			}
 			return (val, mask, null);
 		}
 		public static (Explosion_id1_Explosion_1780179320716845973, uint, uint?) DeserializeArchetypeExplosion_0c25a96a0fb615348b57d8131f1fc940_Explosion_id1_Explosion_1780179320716845973_LOD0(InProtocolBitStream bitStream)
@@ -87,6 +104,11 @@ namespace Coherence.Generated
 			{
 				val.direction = (bitStream.ReadVector2(FloatMeta.NoCompression())).ToUnityVector2();
 				mask |= 0b00000000000000000000000000000001;
+			}
+			if (bitStream.ReadMask())
+			{
+				val.owner = bitStream.ReadEntity();
+				mask |= 0b00000000000000000000000000000010;
 			}
 
 			return (val, mask, 0);

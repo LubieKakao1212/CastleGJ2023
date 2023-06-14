@@ -502,7 +502,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2639605840214257464}
-  - component: {fileID: 536099064}
   m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
@@ -526,24 +525,6 @@ Transform:
   m_Father: {fileID: 2639605840682788718}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60}
---- !u!114 &536099064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2639605840214257465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bbb2b60c28a30a4cb8882a99ef88837, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 10
-  targetLayerMask:
-    serializedVersion: 2
-    m_Bits: 183
-  tip: {fileID: 2639605839107270711}
-  explosion: {fileID: 1780179320716845973, guid: 0c25a96a0fb615348b57d8131f1fc940, type: 3}
 --- !u!1 &2639605840369030217
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +576,7 @@ GameObject:
   - component: {fileID: 5779556865930201474}
   - component: {fileID: 5267647330763549707}
   - component: {fileID: 3852914999982332524}
+  - component: {fileID: 1334929832088593213}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -753,6 +735,7 @@ MonoBehaviour:
   topSpeed: 2.5
   movementDeadzone: 0.05
   rigid: {fileID: 2639605840682788688}
+  sync: {fileID: 0}
 --- !u!114 &520862196960591170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,7 +763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ca4c985702b404f8e1dca5562e7fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePeriod: 0.1
+  damagePeriod: 0.2
   hp: {fileID: 520862196960591170}
   movement: {fileID: 2639605840682788715}
 --- !u!114 &5267647330763549707
@@ -852,8 +835,6 @@ MonoBehaviour:
       lodStepsActive: 1
     - component: {fileID: 2639605840214257464}
       lodStepsActive: 1
-    - component: {fileID: 536099064}
-      lodStepsActive: 1
     - component: {fileID: 2639605840369030216}
       lodStepsActive: 1
     - component: {fileID: 2639605839250969241}
@@ -881,6 +862,8 @@ MonoBehaviour:
     - component: {fileID: 3941358331441405886}
       lodStepsActive: 1
     - component: {fileID: 3852914999982332524}
+      lodStepsActive: 1
+    - component: {fileID: 1334929832088593213}
       lodStepsActive: 1
     lodLevels:
     - distance: 0
@@ -924,10 +907,10 @@ MonoBehaviour:
   - rid: 7178373094099386376
   - rid: 7178373094099386377
   - rid: 7178373094099386378
-  - rid: 7178373094099386383
   - rid: 7178373094099386384
   - rid: 7178373094099386385
   - rid: 7178373094099386386
+  - rid: 7178373100694929409
   floatingOriginMode: 0
   floatingOriginParentedMode: 1
   references:
@@ -1095,10 +1078,6 @@ MonoBehaviour:
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
-    - rid: 7178373094099386383
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
-      data:
-        component: {fileID: 536099064}
     - rid: 7178373094099386384
       type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
       data:
@@ -1157,6 +1136,10 @@ MonoBehaviour:
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
+    - rid: 7178373100694929409
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 1334929832088593213}
 --- !u!114 &3852914999982332524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1172,3 +1155,21 @@ MonoBehaviour:
   sync: {fileID: 5267647330763549707}
   authorityLayer: 6
   defaultLayer: 7
+--- !u!114 &1334929832088593213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2639605840682788689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbb2b60c28a30a4cb8882a99ef88837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 10
+  targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 183
+  tip: {fileID: 2639605839107270711}
+  explosion: {fileID: 1780179320716845973, guid: 0c25a96a0fb615348b57d8131f1fc940, type: 3}

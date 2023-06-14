@@ -116,6 +116,8 @@ MonoBehaviour:
   radialStrength: 200
   acid: {fileID: 8315864369732129931, guid: fbb597bf757ae124a9420852a332f640, type: 3}
   direction: {x: 0, y: 0}
+  owner: {fileID: 0}
+  damage: 10
 --- !u!114 &6212099728483457482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +184,7 @@ MonoBehaviour:
     lodLevels:
     - distance: 0
     archetypeName: Explosion_0c25a96a0fb615348b57d8131f1fc940
-    GeneratesArchetypeDefinition: 0
+    GeneratesArchetypeDefinition: 1
   InterpolationLocation: 1
   bakedScriptType: Coherence.Generated.CoherenceSyncExplosion_id1, Assembly-CSharp
   approveAuthorityTransferRequests: 1
@@ -199,6 +201,7 @@ MonoBehaviour:
   bindings:
   - rid: 7178373094099386395
   - rid: 7178373094099386399
+  - rid: 7178373096851898450
   onNetworkedInstantiation:
     m_PersistentCalls:
       m_Calls: []
@@ -323,6 +326,52 @@ MonoBehaviour:
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
+    - rid: 7178373096851898450
+      type: {class: ReferenceBinding, ns: Coherence.Toolkit.Bindings.ValueBindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 7178373096851898451
+        routing: 0
+        isPredicted: 0
+        defaultInterpolationPath: 
+        guid: 066ace98-66c1-4f5b-b72e-740ad6c9e8a9
+        archetypeData:
+          type: 9
+          minRange: 0
+          maxRange: 0
+          sampleRate: 20
+          floatCompression: 0
+          fields:
+          - type: 9
+            bits: 20
+            minRange: 0
+            maxRange: 0
+            precision: 0
+            floatCompression: 0
+          sharedBinding: {fileID: 0}
+        unityComponent: {fileID: 1780179320716845973}
+        coherenceSync: {fileID: 0}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
+    - rid: 7178373096851898451
+      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: owner
+        monoAssemblyType: UnityEngine.GameObject, UnityEngine
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 1
+        valueSyncCallbackName: 
+        memberType: 4
+        parameterAssemblyTypes: []
+        ownerType:
+          assemblyQualifiedName: Explosion, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+            PublicKeyToken=null
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.ValueBindings.ReferenceBinding,
+            Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
 --- !u!1 &381891729875185804
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +444,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.3456931, b: 0, a: 1}
   m_FlipX: 0

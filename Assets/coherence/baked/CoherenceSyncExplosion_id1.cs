@@ -94,6 +94,43 @@ namespace Coherence.Generated
 		}
 	}
 
+	public class Binding_0c25a96a0fb615348b57d8131f1fc940_066ace98_66c1_4f5b_b72e_740ad6c9e8a9 : ReferenceBinding
+	{
+		private Explosion CastedUnityComponent;		
+
+		protected override void OnBindingCloned()
+		{
+			CastedUnityComponent = (Explosion)UnityComponent;
+		}
+		public override string CoherenceComponentName => "Explosion_id1_Explosion_1780179320716845973";
+
+		public override uint FieldMask => 0b00000000000000000000000000000010;
+
+		public override SerializeEntityID Value
+		{
+			get => (SerializeEntityID)coherenceSync.MonoBridge.UnityObjectToEntityId(CastedUnityComponent.owner);
+			set => CastedUnityComponent.owner = coherenceSync.MonoBridge.EntityIdToGameObject(value);
+		}
+
+		protected override SerializeEntityID ReadComponentData(ICoherenceComponentData coherenceComponent, Vector3 floatingOriginDelta)
+		{
+			var value = ((Explosion_id1_Explosion_1780179320716845973)coherenceComponent).owner;
+			return value;
+		}
+		
+		public override ICoherenceComponentData WriteComponentData(ICoherenceComponentData coherenceComponent)
+		{
+			var update = (Explosion_id1_Explosion_1780179320716845973)coherenceComponent;
+			update.owner = Value;
+			return update;
+		}
+
+		public override ICoherenceComponentData CreateComponentData()
+		{
+			return new Explosion_id1_Explosion_1780179320716845973();
+		}
+	}
+
 
 	[Preserve]
 	[AddComponentMenu("coherence/Baked/Baked 'Explosion' (auto assigned)")]
@@ -133,6 +170,16 @@ namespace Coherence.Generated
 			else
 			{
 				logger.Error("Couldn't find binding (Explosion).direction");
+			}
+			if (coherenceSync.TryGetBindingByGuid("066ace98-66c1-4f5b-b72e-740ad6c9e8a9", "owner", out Binding InternalExplosion_id1_Explosion_1780179320716845973_Explosion_id1_Explosion_1780179320716845973_owner))
+			{
+				var clone = new Binding_0c25a96a0fb615348b57d8131f1fc940_066ace98_66c1_4f5b_b72e_740ad6c9e8a9();
+				InternalExplosion_id1_Explosion_1780179320716845973_Explosion_id1_Explosion_1780179320716845973_owner.CloneTo(clone);
+				coherenceSync.Bindings[coherenceSync.Bindings.IndexOf(InternalExplosion_id1_Explosion_1780179320716845973_Explosion_id1_Explosion_1780179320716845973_owner)] = clone;
+			}
+			else
+			{
+				logger.Error("Couldn't find binding (Explosion).owner");
 			}
 		}
 

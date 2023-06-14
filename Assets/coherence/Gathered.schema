@@ -1,5 +1,6 @@
 component Explosion_id1_Explosion_1780179320716845973
   direction Vector2 [compression "None"]
+  owner Entity [bits "20"]
 
 component Player_id0_PlayerHP_520862196960591170
   SyncHP Int [bits "32", range-min "-2147483648", range-max "2147483647"]
@@ -19,6 +20,7 @@ archetype Explosion_0c25a96a0fb615348b57d8131f1fc940
       value [compression "None"]
     Explosion_id1_Explosion_1780179320716845973 
       value [compression "None"]
+      value [bits "20"]
 
 archetype Player_3b896e424d82c884d9d345e909e13ea9
   lod 0

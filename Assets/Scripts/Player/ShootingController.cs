@@ -44,7 +44,7 @@ public class ShootingController : MonoBehaviour
 
         if (hit.collider != null)
         {
-            Instantiate(explosion, hit.point + ((Vector2)dir) * 0.01f, Quaternion.identity).Init(hit.normal);
+            Instantiate(explosion, hit.point + ((Vector2)dir) * 0.01f, Quaternion.identity).Init(hit.normal, gameObject);
 
             var wall = hit.collider.GetComponent<Wall>();
 
