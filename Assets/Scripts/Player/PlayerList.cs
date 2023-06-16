@@ -7,6 +7,30 @@ using UnityEngine.UI;
 
 public class PlayerList : MonoBehaviour
 {
+    public static IEnumerable<PlayerInfo> Players
+    { 
+        get
+        {
+            var toRemove = new List<uint>();
+            foreach (var pair in Instance.PlayersById)
+            {
+                if (pair.Value == null)
+                {
+                    toRemove.Add(pair.Key);
+                    continue;
+                }
+
+                yield return pair.Value;    
+            }
+
+            foreach (var id in toRemove)
+            {
+                Instance.PlayersById.Remove(id);
+            }
+        }
+    }
+
+
     public static PlayerList Instance { get; private set; }
 
     /// <summary>
@@ -23,7 +47,7 @@ public class PlayerList : MonoBehaviour
 
     private PlayerInfo localPlayer;
     private Dictionary<uint, string> PlayerNames;
-    private Dictionary<string, uint> PlayerIds;
+    private Dictionary<uint, PlayerInfo> PlayersById;
 
     private void Awake()
     {
@@ -31,7 +55,8 @@ public class PlayerList : MonoBehaviour
         Instance = this;
 
         PlayerNames = new Dictionary<uint, string>();
-        PlayerIds= new Dictionary<string, uint>();
+        //PlayerIds= new Dictionary<string, uint>();
+        PlayersById = new Dictionary<uint, PlayerInfo>();
     }
 
     public void SetupLocalPlayerInfo(PlayerInfo info)
@@ -49,7 +74,7 @@ public class PlayerList : MonoBehaviour
     public void BindPlayerIdAndName(CoherenceSync targetPlayerSync, string playerName, uint id)
     {
         PlayerNames.Add(id, playerName);
-        PlayerIds.Add(playerName, id);
+        PlayersById.Add(id, targetPlayerSync.GetComponent<PlayerInfo>());
         if (localPlayer.sync == targetPlayerSync)
         {
             localPlayer.PlayerId = id;
@@ -61,8 +86,8 @@ public class PlayerList : MonoBehaviour
         return Instance.PlayerNames[id];
     }
 
-    /*public static uint GetPlayerId(string name)
+    public static PlayerInfo GetPlayerInfo(uint id)
     {
-        return Instance.PlayerIds[name];
-    }*/
+        return Instance.PlayersById[id];
+    }
 }

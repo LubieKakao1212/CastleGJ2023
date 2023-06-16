@@ -5,8 +5,8 @@ using UnityEngine;
 
 public static class KillMessageGenerator
 {
-    private const string targetColorCode = "#FF1111";
-    private const string sourceColorCode = "#555555";
+    public const string targetColorCode = "#FF1111";
+    public const string sourceColorCode = "#666666";
 
     private static MessageSet explosion = new MessageSet()
     {
@@ -145,7 +145,7 @@ public static class KillMessageGenerator
         return string.Format(messages[Random.Range(0, messages.Length)], target, source);
     }
 
-    private static string Color(this string message, string colorCode)
+    public static string Color(this string message, string colorCode)
     {
         return $"<color={colorCode}>" + message + "</color>";
     }

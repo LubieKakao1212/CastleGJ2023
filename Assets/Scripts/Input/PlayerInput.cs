@@ -80,6 +80,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LeaderBoard"",
+                    ""type"": ""Button"",
+                    ""id"": ""edca9ceb-5606-42e0-bcff-b212811ae3dc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -181,6 +190,28 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c4b6c595-0cdc-4a06-9987-92b22cc911b9"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeaderBoard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2c6a8dc3-b373-4729-84a0-f95e076fee39"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeaderBoard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -195,6 +226,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_MousePointer = m_Player.FindAction("MousePointer", throwIfNotFound: true);
         m_Player_EnableController = m_Player.FindAction("EnableController", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_LeaderBoard = m_Player.FindAction("LeaderBoard", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -262,6 +294,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MousePointer;
     private readonly InputAction m_Player_EnableController;
     private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_LeaderBoard;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -272,6 +305,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @MousePointer => m_Wrapper.m_Player_MousePointer;
         public InputAction @EnableController => m_Wrapper.m_Player_EnableController;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @LeaderBoard => m_Wrapper.m_Player_LeaderBoard;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -299,6 +333,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Fire.started += instance.OnFire;
             @Fire.performed += instance.OnFire;
             @Fire.canceled += instance.OnFire;
+            @LeaderBoard.started += instance.OnLeaderBoard;
+            @LeaderBoard.performed += instance.OnLeaderBoard;
+            @LeaderBoard.canceled += instance.OnLeaderBoard;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -321,6 +358,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Fire.started -= instance.OnFire;
             @Fire.performed -= instance.OnFire;
             @Fire.canceled -= instance.OnFire;
+            @LeaderBoard.started -= instance.OnLeaderBoard;
+            @LeaderBoard.performed -= instance.OnLeaderBoard;
+            @LeaderBoard.canceled -= instance.OnLeaderBoard;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -346,5 +386,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnMousePointer(InputAction.CallbackContext context);
         void OnEnableController(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnLeaderBoard(InputAction.CallbackContext context);
     }
 }

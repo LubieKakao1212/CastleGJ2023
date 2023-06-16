@@ -1115,6 +1115,7 @@ MonoBehaviour:
   - rid: 7178373126844579848
   - rid: 7178373126844579850
   - rid: 7178373138361352281
+  - rid: 7178373138361352339
   onNetworkedInstantiation:
     m_PersistentCalls:
       m_Calls: []
@@ -1494,6 +1495,46 @@ MonoBehaviour:
         ownerType:
           assemblyQualifiedName: PlayerRespawner, Assembly-CSharp, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.CommandBinding, Coherence.Toolkit,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+    - rid: 7178373138361352339
+      type: {class: CommandBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 7178373138361352340
+        routing: 0
+        isPredicted: 0
+        defaultInterpolationPath: 
+        guid: 5279bc1c-9c3c-4812-b835-3461824ce495
+        archetypeData:
+          type: 0
+          minRange: 0
+          maxRange: 0
+          sampleRate: 0
+          floatCompression: 0
+          fields: []
+          sharedBinding: {fileID: 0}
+        unityComponent: {fileID: 3474864809680843249}
+        coherenceSync: {fileID: 0}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
+    - rid: 7178373138361352340
+      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: AddKillInternal
+        monoAssemblyType: 
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 0
+        valueSyncCallbackName: 
+        memberType: 8
+        parameterAssemblyTypes: []
+        ownerType:
+          assemblyQualifiedName: PlayerInfo, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+            PublicKeyToken=null
         CustomData:
           rid: -2
         bindingType:

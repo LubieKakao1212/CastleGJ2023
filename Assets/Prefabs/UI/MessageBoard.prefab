@@ -276,5 +276,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4578c7a0d5d920e47a5f7ec70aa9bf99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messagePrefab: {fileID: 807138861189821950, guid: 2a74fbe121bff9f4da68436c49385afc, type: 3}
+  messagePrefab: {fileID: 7762303587804328117, guid: c3bf224387fbf5e478ba901c83ce0dbf, type: 3}
   sync: {fileID: 2324133042801537310}

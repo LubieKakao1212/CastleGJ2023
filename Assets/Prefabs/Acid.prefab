@@ -249,13 +249,13 @@ MonoBehaviour:
     lodLevels:
     - distance: 0
     archetypeName: Acid_fbb597bf757ae124a9420852a332f640
-    GeneratesArchetypeDefinition: 0
+    GeneratesArchetypeDefinition: 1
   InterpolationLocation: 1
   bakedScriptType: Coherence.Generated.CoherenceSyncAcid_id2, Assembly-CSharp
   approveAuthorityTransferRequests: 1
   simulationType: 0
   authorityTransferType: 2
-  orphanedBehavior: 0
+  orphanedBehavior: 1
   lifetimeType: 1
   uniquenessType: 0
   coherenceUUID: 

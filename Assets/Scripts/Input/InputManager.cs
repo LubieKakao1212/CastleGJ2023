@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +8,8 @@ using UnityEngine.Assertions;
 public class InputManager : MonoBehaviour
 {
     public static event Action Shoot;
+
+    public static event Action ToggleLeaderBoard;
 
     public static Vector2 MousePos => Instance.input.Player.MousePointer.ReadValue<Vector2>();
     public static float HorizontalInput => Instance.usingController ? Instance.input.Player.GamepadHorizontal.ReadValue<float>() : Instance.input.Player.KeyboardHorizontal.ReadValue<float>();
@@ -41,6 +44,8 @@ public class InputManager : MonoBehaviour
         {
             Shoot?.Invoke();
         };
+
+        input.Player.LeaderBoard.started += (ctx) => ToggleLeaderBoard?.Invoke();
     }
 
     public static Vector2 InputDirection(Vector3 targetWorldSpace)

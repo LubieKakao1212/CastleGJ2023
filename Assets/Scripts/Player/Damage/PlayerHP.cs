@@ -128,9 +128,15 @@ public class PlayerHP : MonoBehaviour
         var nearbyPlayerNames = nearbyPlayers.Select((c) => c.GetComponent<PlayerInfo>().PlayerId).ToArray();
 
         var message = KillMessageGenerator.GetEncodedMessage(playerInfo.PlayerId, currentExplosion, lastExplosion, nearbyPlayerNames);
-
-        //Debug.Log(message);
+        
         MessageBoard.AddDeathMessage(message);
+
+        if (message.source != message.target)
+        {
+            PlayerList.GetPlayerInfo(message.source).AddKill();
+        }
+
+        playerInfo.AddDeath();
 
         OnDeath?.Invoke();
     }
