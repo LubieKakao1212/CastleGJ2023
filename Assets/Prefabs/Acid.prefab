@@ -40,7 +40,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8315864368721915729}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 8315864369732129925}
   - component: {fileID: 8315864369732129930}
   - component: {fileID: 5488088232583954947}
+  - component: {fileID: 6920574429094535455}
   m_Layer: 8
   m_Name: Acid
   m_TagString: Acid
@@ -243,6 +244,8 @@ MonoBehaviour:
       lodStepsActive: 1
     - component: {fileID: 2890904103710562504}
       lodStepsActive: 1
+    - component: {fileID: 6920574429094535455}
+      lodStepsActive: 1
     lodLevels:
     - distance: 0
     archetypeName: Acid_fbb597bf757ae124a9420852a332f640
@@ -330,3 +333,16 @@ MonoBehaviour:
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
+--- !u!114 &6920574429094535455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315864369732129931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40bb0a437b5a7f34a8568d7124ffd862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 60

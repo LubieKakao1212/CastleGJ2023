@@ -21,15 +21,15 @@ public class Explosion : MonoBehaviour
     public Vector2 direction;
 
     [HideInInspector]
-    public GameObject owner;
+    public uint ownerId;
 
     [SerializeField]
     private int damage;
 
-    public void Init(Vector2 direction, GameObject owner)
+    public void Init(Vector2 direction, PlayerInfo owner)
     {
         this.direction = direction.normalized;
-        this.owner = owner;
+        this.ownerId = owner.PlayerId;
     }
 
     private void FixedUpdate()
@@ -43,10 +43,21 @@ public class Explosion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject != owner && collision.GetComponent<CoherenceSync>().AuthorityType != Coherence.AuthorityType.None)
+        var player = collision.GetComponent<PlayerInfo>();
+        if (player == null || collision.GetComponent<CoherenceSync>().AuthorityType == Coherence.AuthorityType.None)
+        {
+            return;
+        }
+        var playerHp = collision.GetComponent<PlayerHP>();
+        if (player.PlayerId != ownerId)
         {
             //Should not cause errors unless owner is not player, which should not happen
-            collision.GetComponent<PlayerHP>().DealDamage(damage);
+            playerHp.DealDamage(damage, ownerId);
+            playerHp.RememberExplosion(ownerId);
+        }
+        else
+        {
+            playerHp.RememberExplosion(ownerId);
         }
     }
 

@@ -131,6 +131,80 @@ namespace Coherence.Generated
 		}
 	}
 
+	public class Binding_3b896e424d82c884d9d345e909e13ea9_79180d4f_b363_4217_9e50_e489fc56e306 : UIntBinding
+	{
+		private PlayerInfo CastedUnityComponent;		
+
+		protected override void OnBindingCloned()
+		{
+			CastedUnityComponent = (PlayerInfo)UnityComponent;
+		}
+		public override string CoherenceComponentName => "Player_id0_PlayerInfo_3474864809680843249";
+
+		public override uint FieldMask => 0b00000000000000000000000000000001;
+
+		public override uint Value
+		{
+			get => (uint)(System.UInt32)(CastedUnityComponent.PlayerId);
+			set => CastedUnityComponent.PlayerId = (System.UInt32)(value);
+		}
+
+		protected override uint ReadComponentData(ICoherenceComponentData coherenceComponent, Vector3 floatingOriginDelta)
+		{
+			var value = ((Player_id0_PlayerInfo_3474864809680843249)coherenceComponent).PlayerId;
+			return value;
+		}
+		
+		public override ICoherenceComponentData WriteComponentData(ICoherenceComponentData coherenceComponent)
+		{
+			var update = (Player_id0_PlayerInfo_3474864809680843249)coherenceComponent;
+			update.PlayerId = Value;
+			return update;
+		}
+
+		public override ICoherenceComponentData CreateComponentData()
+		{
+			return new Player_id0_PlayerInfo_3474864809680843249();
+		}
+	}
+
+	public class Binding_3b896e424d82c884d9d345e909e13ea9_6dfae5aa_d9d8_4842_94ac_77e7e9313440 : StringBinding
+	{
+		private PlayerInfo CastedUnityComponent;		
+
+		protected override void OnBindingCloned()
+		{
+			CastedUnityComponent = (PlayerInfo)UnityComponent;
+		}
+		public override string CoherenceComponentName => "Player_id0_PlayerInfo_3474864809680843249";
+
+		public override uint FieldMask => 0b00000000000000000000000000000010;
+
+		public override string Value
+		{
+			get => (string)(System.String)(CastedUnityComponent.PlayerName);
+			set => CastedUnityComponent.PlayerName = (System.String)(value);
+		}
+
+		protected override string ReadComponentData(ICoherenceComponentData coherenceComponent, Vector3 floatingOriginDelta)
+		{
+			var value = ((Player_id0_PlayerInfo_3474864809680843249)coherenceComponent).PlayerName;
+			return value;
+		}
+		
+		public override ICoherenceComponentData WriteComponentData(ICoherenceComponentData coherenceComponent)
+		{
+			var update = (Player_id0_PlayerInfo_3474864809680843249)coherenceComponent;
+			update.PlayerName = Value;
+			return update;
+		}
+
+		public override ICoherenceComponentData CreateComponentData()
+		{
+			return new Player_id0_PlayerInfo_3474864809680843249();
+		}
+	}
+
 	public class Binding_3b896e424d82c884d9d345e909e13ea9_ee745906_d1ab_461e_9049_1780b0f3f185 : DeepRotationBinding
 	{
 		private UnityEngine.Transform CastedUnityComponent;		
@@ -217,6 +291,26 @@ namespace Coherence.Generated
 			else
 			{
 				logger.Error("Couldn't find binding (PlayerHP).SyncMaxHP");
+			}
+			if (coherenceSync.TryGetBindingByGuid("79180d4f-b363-4217-9e50-e489fc56e306", "PlayerId", out Binding InternalPlayer_id0_PlayerInfo_3474864809680843249_Player_id0_PlayerInfo_3474864809680843249_PlayerId))
+			{
+				var clone = new Binding_3b896e424d82c884d9d345e909e13ea9_79180d4f_b363_4217_9e50_e489fc56e306();
+				InternalPlayer_id0_PlayerInfo_3474864809680843249_Player_id0_PlayerInfo_3474864809680843249_PlayerId.CloneTo(clone);
+				coherenceSync.Bindings[coherenceSync.Bindings.IndexOf(InternalPlayer_id0_PlayerInfo_3474864809680843249_Player_id0_PlayerInfo_3474864809680843249_PlayerId)] = clone;
+			}
+			else
+			{
+				logger.Error("Couldn't find binding (PlayerInfo).PlayerId");
+			}
+			if (coherenceSync.TryGetBindingByGuid("6dfae5aa-d9d8-4842-94ac-77e7e9313440", "PlayerName", out Binding InternalPlayer_id0_PlayerInfo_3474864809680843249_Player_id0_PlayerInfo_3474864809680843249_PlayerName))
+			{
+				var clone = new Binding_3b896e424d82c884d9d345e909e13ea9_6dfae5aa_d9d8_4842_94ac_77e7e9313440();
+				InternalPlayer_id0_PlayerInfo_3474864809680843249_Player_id0_PlayerInfo_3474864809680843249_PlayerName.CloneTo(clone);
+				coherenceSync.Bindings[coherenceSync.Bindings.IndexOf(InternalPlayer_id0_PlayerInfo_3474864809680843249_Player_id0_PlayerInfo_3474864809680843249_PlayerName)] = clone;
+			}
+			else
+			{
+				logger.Error("Couldn't find binding (PlayerInfo).PlayerName");
 			}
 			if (coherenceSync.TryGetBindingByGuid("ee745906-d1ab-461e-9049-1780b0f3f185", "rotation", out Binding InternalPlayer_id0_UnityEngine__char_46_Transform_2639605840214257464_Player_id0_UnityEngine__char_46_Transform_2639605840214257464_rotation))
 			{

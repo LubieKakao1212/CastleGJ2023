@@ -16,9 +16,16 @@ public class ShootingController : MonoBehaviour
     [SerializeField]
     private Explosion explosion;
 
+    [SerializeField]
+    private float castRadius;
+
+    [SerializeField]
+    private PlayerInfo playerInfo;
+
     private void Start()
     {
         enabled = false;
+        playerInfo = GetComponent<PlayerInfo>();
     }
 
     private void OnEnable()
@@ -38,13 +45,13 @@ public class ShootingController : MonoBehaviour
             return;
         }
         var dir = -tip.up;
-        var hit = Physics2D.Raycast(transform.position, dir, range, targetLayerMask.value);
+        var hit = Physics2D.CircleCast(transform.position, castRadius, dir, range, targetLayerMask.value);
 
         Debug.DrawRay(transform.position, dir, Color.red, 100f);
 
         if (hit.collider != null)
         {
-            Instantiate(explosion, hit.point + ((Vector2)dir) * 0.01f, Quaternion.identity).Init(hit.normal, gameObject);
+            Instantiate(explosion, hit.point + ((Vector2)dir) * 0.01f, Quaternion.identity).Init(hit.normal, playerInfo);
 
             var wall = hit.collider.GetComponent<Wall>();
 

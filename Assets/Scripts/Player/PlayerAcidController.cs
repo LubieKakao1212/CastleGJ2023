@@ -20,7 +20,7 @@ public class PlayerAcidController : MonoBehaviour
 
     private void Start()
     {
-        damageMachine = new AutoTimeMachine(() => hp.DealDamage(1), damagePeriod);
+        damageMachine = new AutoTimeMachine(() => hp.DealDamage(1, null), damagePeriod);
     }
 
     public void FixedUpdate()

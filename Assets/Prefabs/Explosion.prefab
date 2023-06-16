@@ -116,7 +116,7 @@ MonoBehaviour:
   radialStrength: 200
   acid: {fileID: 8315864369732129931, guid: fbb597bf757ae124a9420852a332f640, type: 3}
   direction: {x: 0, y: 0}
-  owner: {fileID: 0}
+  ownerId: 0
   damage: 10
 --- !u!114 &6212099728483457482
 MonoBehaviour:
@@ -201,7 +201,7 @@ MonoBehaviour:
   bindings:
   - rid: 7178373094099386395
   - rid: 7178373094099386399
-  - rid: 7178373096851898450
+  - rid: 7178373126844579854
   onNetworkedInstantiation:
     m_PersistentCalls:
       m_Calls: []
@@ -326,37 +326,37 @@ MonoBehaviour:
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
-    - rid: 7178373096851898450
-      type: {class: ReferenceBinding, ns: Coherence.Toolkit.Bindings.ValueBindings, asm: Coherence.Toolkit}
+    - rid: 7178373126844579854
+      type: {class: UIntBinding, ns: Coherence.Toolkit.Bindings.ValueBindings, asm: Coherence.Toolkit}
       data:
         descriptor:
-          rid: 7178373096851898451
+          rid: 7178373126844579855
         routing: 0
         isPredicted: 0
         defaultInterpolationPath: 
-        guid: 066ace98-66c1-4f5b-b72e-740ad6c9e8a9
+        guid: d0817e56-792d-4d20-8a0a-10621b232f55
         archetypeData:
-          type: 9
+          type: 12
           minRange: 0
-          maxRange: 0
+          maxRange: 4294967295
           sampleRate: 20
           floatCompression: 0
           fields:
-          - type: 9
-            bits: 20
+          - type: 12
+            bits: 32
             minRange: 0
-            maxRange: 0
+            maxRange: 4294967295
             precision: 0
             floatCompression: 0
           sharedBinding: {fileID: 0}
         unityComponent: {fileID: 1780179320716845973}
         coherenceSync: {fileID: 0}
         interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
-    - rid: 7178373096851898451
+    - rid: 7178373126844579855
       type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
-        name: owner
-        monoAssemblyType: UnityEngine.GameObject, UnityEngine
+        name: ownerId
+        monoAssemblyType: System.UInt32, mscorlib
         required: 0
         enforcesLODingWhenFieldsOverriden: 1
         valueSyncCallbackName: 
@@ -368,7 +368,7 @@ MonoBehaviour:
         CustomData:
           rid: -2
         bindingType:
-          assemblyQualifiedName: Coherence.Toolkit.Bindings.ValueBindings.ReferenceBinding,
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.ValueBindings.UIntBinding,
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []

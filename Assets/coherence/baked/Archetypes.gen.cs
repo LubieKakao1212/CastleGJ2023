@@ -12,14 +12,20 @@ namespace Coherence.Generated
 	{
 		public const int Acid_fbb597bf757ae124a9420852a332f640Index = 0;
 		public const int Explosion_0c25a96a0fb615348b57d8131f1fc940Index = 1;
-		public const int Player_3b896e424d82c884d9d345e909e13ea9Index = 2;
+		public const int MessageBoard_0adbc65a9c562a945b443b2237375cbdIndex = 2;
+		public const int Player_3b896e424d82c884d9d345e909e13ea9Index = 3;
+		public const int SystemsSynced_ec84610ffed7f904db8ab89dc4452e37Index = 4;
 
 		public static Dictionary<string, int> IndexForName = new Dictionary<string, int>() {
 			{ "Acid_fbb597bf757ae124a9420852a332f640", 0 },
 
 			{ "Explosion_0c25a96a0fb615348b57d8131f1fc940", 1 },
 
-			{ "Player_3b896e424d82c884d9d345e909e13ea9", 2 },
+			{ "MessageBoard_0adbc65a9c562a945b443b2237375cbd", 2 },
+
+			{ "Player_3b896e424d82c884d9d345e909e13ea9", 3 },
+
+			{ "SystemsSynced_ec84610ffed7f904db8ab89dc4452e37", 4 },
 
 		};
 	}

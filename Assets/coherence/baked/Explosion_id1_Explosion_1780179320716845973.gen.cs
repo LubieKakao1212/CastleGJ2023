@@ -18,11 +18,11 @@ namespace Coherence.Generated
 	public struct Explosion_id1_Explosion_1780179320716845973 : ICoherenceComponentData
 	{
 		public Vector2 direction;
-		public SerializeEntityID owner;
+		public uint ownerId;
 
 		public override string ToString()
 		{
-			return $"Explosion_id1_Explosion_1780179320716845973(direction: {direction}, owner: {owner})";
+			return $"Explosion_id1_Explosion_1780179320716845973(direction: {direction}, ownerId: {ownerId})";
 		}
 
 		public uint GetComponentType() => Definition.InternalExplosion_id1_Explosion_1780179320716845973;
@@ -33,6 +33,8 @@ namespace Coherence.Generated
 
 		public AbsoluteSimulationFrame Frame;
 	
+		private static readonly uint _ownerId_Min = 0;
+		private static readonly uint _ownerId_Max = 4294967295;
 
 		public void SetSimulationFrame(AbsoluteSimulationFrame frame)
 		{
@@ -53,7 +55,7 @@ namespace Coherence.Generated
 			if ((mask & 0x01) != 0)
 			{
 				Frame = other.Frame;
-				owner = other.owner;
+				ownerId = other.ownerId;
 			}
 			mask >>= 1;
 			return this;
@@ -74,7 +76,9 @@ namespace Coherence.Generated
 			mask >>= 1;
 			if (bitStream.WriteMask((mask & 0x01) != 0))
 			{
-				bitStream.WriteEntity(data.owner);
+				Coherence.Utils.Bounds.Check(data.ownerId, _ownerId_Min, _ownerId_Max, "Explosion_id1_Explosion_1780179320716845973.ownerId");
+				data.ownerId = Coherence.Utils.Bounds.Clamp(data.ownerId, _ownerId_Min, _ownerId_Max);
+				bitStream.WriteUIntegerRange(data.ownerId, 32, 0);
 			}
 			mask >>= 1;
 		}
@@ -91,7 +95,7 @@ namespace Coherence.Generated
 			}
 			if (bitStream.ReadMask())
 			{
-				val.owner = bitStream.ReadEntity();
+				val.ownerId = bitStream.ReadUIntegerRange(32, 0);
 				mask |= 0b00000000000000000000000000000010;
 			}
 			return (val, mask, null);
@@ -107,7 +111,7 @@ namespace Coherence.Generated
 			}
 			if (bitStream.ReadMask())
 			{
-				val.owner = bitStream.ReadEntity();
+				val.ownerId = bitStream.ReadUIntegerRange(32, 0);
 				mask |= 0b00000000000000000000000000000010;
 			}
 

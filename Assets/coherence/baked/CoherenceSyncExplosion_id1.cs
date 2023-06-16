@@ -94,7 +94,7 @@ namespace Coherence.Generated
 		}
 	}
 
-	public class Binding_0c25a96a0fb615348b57d8131f1fc940_066ace98_66c1_4f5b_b72e_740ad6c9e8a9 : ReferenceBinding
+	public class Binding_0c25a96a0fb615348b57d8131f1fc940_d0817e56_792d_4d20_8a0a_10621b232f55 : UIntBinding
 	{
 		private Explosion CastedUnityComponent;		
 
@@ -106,22 +106,22 @@ namespace Coherence.Generated
 
 		public override uint FieldMask => 0b00000000000000000000000000000010;
 
-		public override SerializeEntityID Value
+		public override uint Value
 		{
-			get => (SerializeEntityID)coherenceSync.MonoBridge.UnityObjectToEntityId(CastedUnityComponent.owner);
-			set => CastedUnityComponent.owner = coherenceSync.MonoBridge.EntityIdToGameObject(value);
+			get => (uint)(System.UInt32)(CastedUnityComponent.ownerId);
+			set => CastedUnityComponent.ownerId = (System.UInt32)(value);
 		}
 
-		protected override SerializeEntityID ReadComponentData(ICoherenceComponentData coherenceComponent, Vector3 floatingOriginDelta)
+		protected override uint ReadComponentData(ICoherenceComponentData coherenceComponent, Vector3 floatingOriginDelta)
 		{
-			var value = ((Explosion_id1_Explosion_1780179320716845973)coherenceComponent).owner;
+			var value = ((Explosion_id1_Explosion_1780179320716845973)coherenceComponent).ownerId;
 			return value;
 		}
 		
 		public override ICoherenceComponentData WriteComponentData(ICoherenceComponentData coherenceComponent)
 		{
 			var update = (Explosion_id1_Explosion_1780179320716845973)coherenceComponent;
-			update.owner = Value;
+			update.ownerId = Value;
 			return update;
 		}
 
@@ -171,15 +171,15 @@ namespace Coherence.Generated
 			{
 				logger.Error("Couldn't find binding (Explosion).direction");
 			}
-			if (coherenceSync.TryGetBindingByGuid("066ace98-66c1-4f5b-b72e-740ad6c9e8a9", "owner", out Binding InternalExplosion_id1_Explosion_1780179320716845973_Explosion_id1_Explosion_1780179320716845973_owner))
+			if (coherenceSync.TryGetBindingByGuid("d0817e56-792d-4d20-8a0a-10621b232f55", "ownerId", out Binding InternalExplosion_id1_Explosion_1780179320716845973_Explosion_id1_Explosion_1780179320716845973_ownerId))
 			{
-				var clone = new Binding_0c25a96a0fb615348b57d8131f1fc940_066ace98_66c1_4f5b_b72e_740ad6c9e8a9();
-				InternalExplosion_id1_Explosion_1780179320716845973_Explosion_id1_Explosion_1780179320716845973_owner.CloneTo(clone);
-				coherenceSync.Bindings[coherenceSync.Bindings.IndexOf(InternalExplosion_id1_Explosion_1780179320716845973_Explosion_id1_Explosion_1780179320716845973_owner)] = clone;
+				var clone = new Binding_0c25a96a0fb615348b57d8131f1fc940_d0817e56_792d_4d20_8a0a_10621b232f55();
+				InternalExplosion_id1_Explosion_1780179320716845973_Explosion_id1_Explosion_1780179320716845973_ownerId.CloneTo(clone);
+				coherenceSync.Bindings[coherenceSync.Bindings.IndexOf(InternalExplosion_id1_Explosion_1780179320716845973_Explosion_id1_Explosion_1780179320716845973_ownerId)] = clone;
 			}
 			else
 			{
-				logger.Error("Couldn't find binding (Explosion).owner");
+				logger.Error("Couldn't find binding (Explosion).ownerId");
 			}
 		}
 
