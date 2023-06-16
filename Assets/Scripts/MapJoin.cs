@@ -1,35 +1,45 @@
+using Coherence.Toolkit;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MapJoin : MonoBehaviour
 {
     [SerializeField]
-    private BucketRandom<Transform> targetPoints;
-    
-    [SerializeField]
-    private Transform[] targetPoints2;
+    private Transform[] targetPoints;
 
     private BucketRandom<int> random;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField]
+    private CoherenceSync sync;
+
+    private void Awake()
     {
-        var rigid = collision.GetComponent<Rigidbody2D>();
-        JoinMap(rigid);
+        random = new BucketRandom<int>(Enumerable.Range(0, targetPoints.Length).ToArray());
     }
 
-    public void JoinMap(Rigidbody2D rigid)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (rigid != null)
+        var player = collision.GetComponent<PlayerRespawner>();
+        JoinMap(player);
+    }
+
+    public void JoinMap(PlayerRespawner player)
+    {
+        if (player != null)
         {
-            var point = targetPoints.GetRandom();
-
-            rigid.MovePosition(point.position);
-
-            var shooter = rigid.GetComponentInChildren<ShootingController>();
-
-            shooter.enabled = true;
+            player.SetSpawn(sync, this);
         }
     }
 
+    public void RequestSpawnpoint(CoherenceSync player)
+    {
+        player.SendCommand<PlayerRespawner>(nameof(PlayerRespawner.RespawnInternal), Coherence.MessageTarget.AuthorityOnly, random.GetRandom());
+    }
+
+    public Transform GetSpawnpoint(int id)
+    {
+        return targetPoints[id];
+    }
 }

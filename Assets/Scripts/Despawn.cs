@@ -9,7 +9,7 @@ public class Despawn : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if((lifetime -= Time.fixedDeltaTime) <= 0)
+        if(enabled && (lifetime -= Time.fixedDeltaTime) <= 0)
         {
             Destroy(gameObject);
         }

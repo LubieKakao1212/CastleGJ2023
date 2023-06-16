@@ -90,6 +90,12 @@ public class PlayerHP : MonoBehaviour
         debugLastExplosionOwnerId = LastExplosionOwnerId == null ? -1 : (int)LastExplosionOwnerId.Value;
     }
 
+    public void ResetHP()
+    {
+        hp = maxHP;
+        HpChanged?.Invoke();
+    }
+
     public void DealDamage(int damage, uint? explosionOwnerId)
     {
         hp -= damage;

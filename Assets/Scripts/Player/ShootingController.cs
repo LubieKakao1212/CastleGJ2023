@@ -14,6 +14,9 @@ public class ShootingController : MonoBehaviour
     private Transform tip;
 
     [SerializeField]
+    private ProjectileTrail trail;
+
+    [SerializeField]
     private Explosion explosion;
 
     [SerializeField]
@@ -49,9 +52,13 @@ public class ShootingController : MonoBehaviour
 
         Debug.DrawRay(transform.position, dir, Color.red, 100f);
 
+        Vector3 endPoint;
+
         if (hit.collider != null)
         {
             Instantiate(explosion, hit.point + ((Vector2)dir) * 0.01f, Quaternion.identity).Init(hit.normal, playerInfo);
+
+            endPoint = hit.point;
 
             var wall = hit.collider.GetComponent<Wall>();
 
@@ -60,5 +67,11 @@ public class ShootingController : MonoBehaviour
                 wall.Hit(hit, this);
             }
         }
+        else
+        {
+            endPoint = transform.position + dir * range;
+        }
+
+        Instantiate(trail, tip.position, Quaternion.identity).EndPosSync = endPoint;
     }
 }

@@ -1,3 +1,6 @@
+component BulletTrail_id6_ProjectileTrail_4771486144989202667
+  EndPosSync Vector3 [compression "None"]
+
 component Explosion_id1_Explosion_1780179320716845973
   direction Vector2 [compression "None"]
   ownerId UInt [bits "32", range-min "0", range-max "4294967295"]
@@ -16,11 +19,17 @@ component Player_id0_UnityEngine__char_46_Transform_2639605840214257464
 component SystemsSynced_id4_PlayerList_5830596318896160362
   nextId UInt [bits "32", range-min "0", range-max "4294967295"]
 
+command AreaMover_id5_MapJoin__char_46_RequestSpawnpoint_7b12f40c_7295_45d5_acf7_e6a4ced8efe2 [routing "AuthorityOnly"]
+  player Entity 
+
 command MessageBoard_id3_MessageBoard__char_46_AddDeathMessageInternal_8b0fef53_8cf8_4bfd_b3ff_1294f6e09f55 [routing "All"]
   target UInt 
   source UInt 
   messageSet UInt 
   message UInt 
+
+command Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c [routing "AuthorityOnly"]
+  spawnpoint Int 
 
 command SystemsSynced_id4_PlayerList__char_46_AssignPlayerIdAndName_24e85083_9792_4229_b5a9_280445e1912d [routing "AuthorityOnly"]
   targetPlayerSync Entity 
@@ -34,6 +43,18 @@ command SystemsSynced_id4_PlayerList__char_46_BindPlayerIdAndName_627a7098_4a40_
 archetype Acid_fbb597bf757ae124a9420852a332f640
   lod 0
     WorldPosition 
+      value [compression "None"]
+
+archetype AreaMover_b4c21c4eeb39050428b8a17907da928c
+  lod 0
+    WorldPosition 
+      value [compression "None"]
+
+archetype BulletTrail_8a9e96fc2de52284c98b4f0d8a3ba0a1
+  lod 0
+    WorldPosition 
+      value [compression "None"]
+    BulletTrail_id6_ProjectileTrail_4771486144989202667 
       value [compression "None"]
 
 archetype Explosion_0c25a96a0fb615348b57d8131f1fc940

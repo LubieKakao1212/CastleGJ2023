@@ -9,28 +9,47 @@ public class PlayerRespawner : MonoBehaviour
     [SerializeField]
     private PlayerHP playerHP;
 
-    private Transform[] spawnPoints;
+    private MapJoin map;
+
+    [SerializeField]
+    private Rigidbody2D rigid;
+
+    [SerializeField]
+    private ShootingController shooter;
 
     [SerializeField]
     private CoherenceSync sync;
 
-    [SerializeField]
     private CoherenceSync spawnManager;
 
     public void Awake()
     {
-        
+        playerHP.OnDeath += Respawn;
     }
 
-    public void SetSpawn(CoherenceSync spawnManager, Transform[] spawnPoints)
+    public void SetSpawn(CoherenceSync spawnManager, MapJoin map)
     {
-        this.spawnPoints = spawnPoints;
+        this.map = map;
         this.spawnManager = spawnManager;
         Respawn();
     }
 
     public void Respawn()
     {
+        spawnManager.SendCommand<MapJoin>(nameof(MapJoin.RequestSpawnpoint), Coherence.MessageTarget.AuthorityOnly, sync);
+    }
 
+    /// <summary>
+    /// Coherence stuff, do NOT touch
+    /// </summary>
+    public void RespawnInternal(int spawnpoint)
+    {
+        if (!shooter.enabled)
+        {
+            shooter.enabled = true;
+        }
+        rigid.MovePosition(map.GetSpawnpoint(spawnpoint).position);
+
+        playerHP.ResetHP();
     }
 }

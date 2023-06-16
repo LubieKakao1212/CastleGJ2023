@@ -2172,6 +2172,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1334929832088593213, guid: 3b896e424d82c884d9d345e909e13ea9, type: 3}
+      propertyPath: trail
+      value: 
+      objectReference: {fileID: 4771486144989202667, guid: 8a9e96fc2de52284c98b4f0d8a3ba0a1, type: 3}
     - target: {fileID: 2639605840682788689, guid: 3b896e424d82c884d9d345e909e13ea9, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2236,6 +2240,18 @@ PrefabInstance:
       propertyPath: bridge
       value: 
       objectReference: {fileID: 1863977035}
+    - target: {fileID: 5267647330763549707, guid: 3b896e424d82c884d9d345e909e13ea9, type: 3}
+      propertyPath: archetype.boundComponents.Array.size
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267647330763549707, guid: 3b896e424d82c884d9d345e909e13ea9, type: 3}
+      propertyPath: archetype.boundComponents.Array.data[33].component
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267647330763549707, guid: 3b896e424d82c884d9d345e909e13ea9, type: 3}
+      propertyPath: archetype.boundComponents.Array.data[33].lodStepsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b896e424d82c884d9d345e909e13ea9, type: 3}
 --- !u!1 &782277296
@@ -4359,6 +4375,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5959681622235168608, guid: b4c21c4eeb39050428b8a17907da928c, type: 3}
+      propertyPath: targetPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959681622235168608, guid: b4c21c4eeb39050428b8a17907da928c, type: 3}
+      propertyPath: targetPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 946681039}
+    - target: {fileID: 5959681622235168608, guid: b4c21c4eeb39050428b8a17907da928c, type: 3}
+      propertyPath: targetPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 176942065}
+    - target: {fileID: 5959681622235168608, guid: b4c21c4eeb39050428b8a17907da928c, type: 3}
+      propertyPath: targetPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1105713196}
+    - target: {fileID: 5959681622235168608, guid: b4c21c4eeb39050428b8a17907da928c, type: 3}
+      propertyPath: targetPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1069083190}
     - target: {fileID: 5959681622235168608, guid: b4c21c4eeb39050428b8a17907da928c, type: 3}
       propertyPath: targetPoints.defaultBucket.Array.size
       value: 4
@@ -7497,6 +7533,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5959681622235168608, guid: b4c21c4eeb39050428b8a17907da928c, type: 3}
+      propertyPath: targetPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959681622235168608, guid: b4c21c4eeb39050428b8a17907da928c, type: 3}
+      propertyPath: targetPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 2039872625}
+    - target: {fileID: 5959681622235168608, guid: b4c21c4eeb39050428b8a17907da928c, type: 3}
+      propertyPath: targetPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1313397360}
+    - target: {fileID: 5959681622235168608, guid: b4c21c4eeb39050428b8a17907da928c, type: 3}
+      propertyPath: targetPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1441560099}
+    - target: {fileID: 5959681622235168608, guid: b4c21c4eeb39050428b8a17907da928c, type: 3}
+      propertyPath: targetPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 2071829669}
+    - target: {fileID: 5959681622235168608, guid: b4c21c4eeb39050428b8a17907da928c, type: 3}
+      propertyPath: targetPoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 2071829669}
     - target: {fileID: 5959681622235168608, guid: b4c21c4eeb39050428b8a17907da928c, type: 3}
       propertyPath: targetPoints.defaultBucket.Array.size
       value: 4

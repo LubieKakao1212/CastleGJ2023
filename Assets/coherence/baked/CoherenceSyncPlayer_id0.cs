@@ -251,7 +251,8 @@ namespace Coherence.Generated
 		private CoherenceSync coherenceSync;
 		private Logger logger;
 
-		// Cached targets for commands
+		// Cached targets for commands		
+		private PlayerRespawner Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c_CommandTarget;
 
 		private IClient client;
 		private CoherenceMonoBridge monoBridge => coherenceSync.MonoBridge;
@@ -262,6 +263,16 @@ namespace Coherence.Generated
 			coherenceSync.usingReflection = false;
 
 			logger = coherenceSync.logger.With<CoherenceSyncPlayer_id0>();
+			if (coherenceSync.TryGetBindingByGuid("855a22e0-4761-412a-b3b6-4f4db3d1c40c", "RespawnInternal", out Binding Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c))
+			{
+				Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c_CommandTarget = (PlayerRespawner)Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c.UnityComponent;
+				coherenceSync.AddCommandRequestDelegate("PlayerRespawner.RespawnInternal", "(System.Int32)",
+				SendCommand_Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c, ReceiveLocalCommand_Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c, MessageTarget.AuthorityOnly, Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c_CommandTarget,false);
+			}
+			else
+			{
+				logger.Error("Couldn't find command binding (RespawnInternal)");
+			}
 			if (coherenceSync.TryGetBindingByGuid("406d0057-fba8-43e8-bfb8-6bf37c28e701", "position", out Binding InternalWorldPosition_Translation_value))
 			{
 				var clone = new Binding_3b896e424d82c884d9d345e909e13ea9_406d0057_fba8_43e8_bfb8_6bf37c28e701();
@@ -354,11 +365,35 @@ namespace Coherence.Generated
 			}
 			this.client = client;
 		}
+		void SendCommand_Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c(MessageTarget target, object[] args)
+		{
+			var command = new Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c();
+			int i = 0;
+			command.spawnpoint = (int)((System.Int32)args[i++]);
+			client.SendCommand(command, target, coherenceSync.EntityID);
+		}
+
+		void ReceiveLocalCommand_Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c(MessageTarget target, object[] args)
+		{
+			var command = new Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c();
+			int i = 0;
+			command.spawnpoint = (int)((System.Int32)args[i++]);
+			ReceiveCommand_Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c(command);
+		}
+
+		void ReceiveCommand_Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c(Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c command)
+		{
+			var target = Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c_CommandTarget;
+			target.RespawnInternal((System.Int32)(command.spawnpoint));
+		}
 
 		public override void ReceiveCommand(IEntityCommand command)
 		{
 			switch(command)
 			{
+				case Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c castedCommand:
+					ReceiveCommand_Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c(castedCommand);
+					break;
 				default:
 					logger.Warning($"[CoherenceSyncPlayer_id0] Unhandled command: {command.GetType()}.");
 					break;

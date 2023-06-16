@@ -279,7 +279,8 @@ MonoBehaviour:
   selectedSynchronizedPrefabOption: 2
   usingReflection: 0
   coherenceTag: 
-  componentActions: []
+  componentActions:
+  - rid: 7178373138361352328
   floatingOriginMode: 0
   floatingOriginParentedMode: 1
   references:
@@ -333,6 +334,10 @@ MonoBehaviour:
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
+    - rid: 7178373138361352328
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 6920574429094535455}
 --- !u!114 &6920574429094535455
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,16 @@ public class BucketRandom<T>
     
     private List<T> bucket = new List<T>();
 
+    public BucketRandom()
+    {
+
+    }
+
+    public BucketRandom(params T[] defaultBucket)
+    {
+        this.defaultBucket = defaultBucket;
+    }
+
     public T GetRandom()
     {
         if (bucket.Count == 0)

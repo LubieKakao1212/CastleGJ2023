@@ -781,6 +781,7 @@ GameObject:
   - component: {fileID: 3852914999982332524}
   - component: {fileID: 1334929832088593213}
   - component: {fileID: 3474864809680843249}
+  - component: {fileID: 3137340623664970884}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1087,6 +1088,8 @@ MonoBehaviour:
       lodStepsActive: 1
     - component: {fileID: 2921393692967219821}
       lodStepsActive: 1
+    - component: {fileID: 3137340623664970884}
+      lodStepsActive: 1
     lodLevels:
     - distance: 0
     archetypeName: Player_3b896e424d82c884d9d345e909e13ea9
@@ -1111,6 +1114,7 @@ MonoBehaviour:
   - rid: 7178373094099386393
   - rid: 7178373126844579848
   - rid: 7178373126844579850
+  - rid: 7178373138361352281
   onNetworkedInstantiation:
     m_PersistentCalls:
       m_Calls: []
@@ -1456,6 +1460,47 @@ MonoBehaviour:
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
+    - rid: 7178373138361352281
+      type: {class: CommandBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 7178373138361352282
+        routing: 0
+        isPredicted: 0
+        defaultInterpolationPath: 
+        guid: 855a22e0-4761-412a-b3b6-4f4db3d1c40c
+        archetypeData:
+          type: 0
+          minRange: 0
+          maxRange: 0
+          sampleRate: 0
+          floatCompression: 0
+          fields: []
+          sharedBinding: {fileID: 0}
+        unityComponent: {fileID: 3137340623664970884}
+        coherenceSync: {fileID: 0}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
+    - rid: 7178373138361352282
+      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: RespawnInternal
+        monoAssemblyType: 
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 0
+        valueSyncCallbackName: 
+        memberType: 8
+        parameterAssemblyTypes:
+        - System.Int32, mscorlib
+        ownerType:
+          assemblyQualifiedName: PlayerRespawner, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.CommandBinding, Coherence.Toolkit,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
 --- !u!114 &3852914999982332524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1488,6 +1533,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 183
   tip: {fileID: 2639605839107270711}
+  trail: {fileID: 0}
   explosion: {fileID: 1780179320716845973, guid: 0c25a96a0fb615348b57d8131f1fc940, type: 3}
   castRadius: 0.1
   playerInfo: {fileID: 3474864809680843249}
@@ -1505,3 +1551,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <sync>k__BackingField: {fileID: 5267647330763549707}
   bridge: {fileID: 0}
+--- !u!114 &3137340623664970884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2639605840682788689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4b5142ef4245141a8005359ecf23aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: {fileID: 520862196960591170}
+  rigid: {fileID: 2639605840682788688}
+  shooter: {fileID: 1334929832088593213}
+  sync: {fileID: 5267647330763549707}

@@ -11,21 +11,27 @@ namespace Coherence.Generated
 	public static class Archetypes
 	{
 		public const int Acid_fbb597bf757ae124a9420852a332f640Index = 0;
-		public const int Explosion_0c25a96a0fb615348b57d8131f1fc940Index = 1;
-		public const int MessageBoard_0adbc65a9c562a945b443b2237375cbdIndex = 2;
-		public const int Player_3b896e424d82c884d9d345e909e13ea9Index = 3;
-		public const int SystemsSynced_ec84610ffed7f904db8ab89dc4452e37Index = 4;
+		public const int AreaMover_b4c21c4eeb39050428b8a17907da928cIndex = 1;
+		public const int BulletTrail_8a9e96fc2de52284c98b4f0d8a3ba0a1Index = 2;
+		public const int Explosion_0c25a96a0fb615348b57d8131f1fc940Index = 3;
+		public const int MessageBoard_0adbc65a9c562a945b443b2237375cbdIndex = 4;
+		public const int Player_3b896e424d82c884d9d345e909e13ea9Index = 5;
+		public const int SystemsSynced_ec84610ffed7f904db8ab89dc4452e37Index = 6;
 
 		public static Dictionary<string, int> IndexForName = new Dictionary<string, int>() {
 			{ "Acid_fbb597bf757ae124a9420852a332f640", 0 },
 
-			{ "Explosion_0c25a96a0fb615348b57d8131f1fc940", 1 },
+			{ "AreaMover_b4c21c4eeb39050428b8a17907da928c", 1 },
 
-			{ "MessageBoard_0adbc65a9c562a945b443b2237375cbd", 2 },
+			{ "BulletTrail_8a9e96fc2de52284c98b4f0d8a3ba0a1", 2 },
 
-			{ "Player_3b896e424d82c884d9d345e909e13ea9", 3 },
+			{ "Explosion_0c25a96a0fb615348b57d8131f1fc940", 3 },
 
-			{ "SystemsSynced_ec84610ffed7f904db8ab89dc4452e37", 4 },
+			{ "MessageBoard_0adbc65a9c562a945b443b2237375cbd", 4 },
+
+			{ "Player_3b896e424d82c884d9d345e909e13ea9", 5 },
+
+			{ "SystemsSynced_ec84610ffed7f904db8ab89dc4452e37", 6 },
 
 		};
 	}
