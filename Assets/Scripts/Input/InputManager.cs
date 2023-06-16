@@ -39,7 +39,6 @@ public class InputManager : MonoBehaviour
 
         input.Player.Fire.started += (ctx) =>
         {
-            Debug.Log(ctx.ReadValue<float>());
             Shoot?.Invoke();
         };
     }
