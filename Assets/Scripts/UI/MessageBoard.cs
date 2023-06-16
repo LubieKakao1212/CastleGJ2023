@@ -15,6 +15,9 @@ public class MessageBoard : MonoBehaviour
     [SerializeField]
     private CoherenceSync sync;
 
+    [SerializeField]
+    private Transform BoardRoot;
+
     public static void AddDeathMessage((uint target, uint source, byte messageSet, byte message) args)
     {
         var (target, source, messageSet, message) = args;
@@ -36,7 +39,7 @@ public class MessageBoard : MonoBehaviour
 
     private void AddMessageInternal(string message)
     {
-        Instantiate(messagePrefab, transform).text = message;
+        Instantiate(messagePrefab, BoardRoott).text = message;
     }
 
     private void Awake()

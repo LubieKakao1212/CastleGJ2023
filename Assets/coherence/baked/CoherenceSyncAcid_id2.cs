@@ -57,6 +57,43 @@ namespace Coherence.Generated
 		}
 	}
 
+	public class Binding_fbb597bf757ae124a9420852a332f640_9f3f13d4_59e1_49eb_9f96_b2981e589635 : FloatBinding
+	{
+		private Despawn CastedUnityComponent;		
+
+		protected override void OnBindingCloned()
+		{
+			CastedUnityComponent = (Despawn)UnityComponent;
+		}
+		public override string CoherenceComponentName => "Acid_id2_Despawn_6920574429094535455";
+
+		public override uint FieldMask => 0b00000000000000000000000000000001;
+
+		public override float Value
+		{
+			get => (float)(System.Single)(CastedUnityComponent.lifetime);
+			set => CastedUnityComponent.lifetime = (System.Single)(value);
+		}
+
+		protected override float ReadComponentData(ICoherenceComponentData coherenceComponent, Vector3 floatingOriginDelta)
+		{
+			var value = ((Acid_id2_Despawn_6920574429094535455)coherenceComponent).lifetime;
+			return value;
+		}
+		
+		public override ICoherenceComponentData WriteComponentData(ICoherenceComponentData coherenceComponent)
+		{
+			var update = (Acid_id2_Despawn_6920574429094535455)coherenceComponent;
+			update.lifetime = Value;
+			return update;
+		}
+
+		public override ICoherenceComponentData CreateComponentData()
+		{
+			return new Acid_id2_Despawn_6920574429094535455();
+		}
+	}
+
 
 	[Preserve]
 	[AddComponentMenu("coherence/Baked/Baked 'Acid' (auto assigned)")]
@@ -86,6 +123,16 @@ namespace Coherence.Generated
 			else
 			{
 				logger.Error("Couldn't find binding (UnityEngine.Transform).position");
+			}
+			if (coherenceSync.TryGetBindingByGuid("9f3f13d4-59e1-49eb-9f96-b2981e589635", "lifetime", out Binding InternalAcid_id2_Despawn_6920574429094535455_Acid_id2_Despawn_6920574429094535455_lifetime))
+			{
+				var clone = new Binding_fbb597bf757ae124a9420852a332f640_9f3f13d4_59e1_49eb_9f96_b2981e589635();
+				InternalAcid_id2_Despawn_6920574429094535455_Acid_id2_Despawn_6920574429094535455_lifetime.CloneTo(clone);
+				coherenceSync.Bindings[coherenceSync.Bindings.IndexOf(InternalAcid_id2_Despawn_6920574429094535455_Acid_id2_Despawn_6920574429094535455_lifetime)] = clone;
+			}
+			else
+			{
+				logger.Error("Couldn't find binding (Despawn).lifetime");
 			}
 		}
 

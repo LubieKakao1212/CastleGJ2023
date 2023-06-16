@@ -5,7 +5,7 @@ using UnityEngine;
 public class Despawn : MonoBehaviour
 {
     [SerializeField]
-    private float lifetime;
+    public float lifetime;
 
     private void FixedUpdate()
     {

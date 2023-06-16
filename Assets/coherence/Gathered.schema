@@ -1,3 +1,6 @@
+component Acid_id2_Despawn_6920574429094535455
+  lifetime Float [compression "None"]
+
 component BulletTrail_id6_ProjectileTrail_4771486144989202667
   EndPosSync Vector3 [compression "None"]
 
@@ -10,8 +13,10 @@ component Player_id0_PlayerHP_520862196960591170
   SyncMaxHP Int [bits "32", range-min "-2147483648", range-max "2147483647"]
 
 component Player_id0_PlayerInfo_3474864809680843249
-  PlayerId UInt [bits "32", range-min "0", range-max "4294967295"]
   PlayerName String [bits "6"]
+  DeathCountSync Int [bits "32", range-min "-2147483648", range-max "2147483647"]
+  KillCountSync Int [bits "32", range-min "-2147483648", range-max "2147483647"]
+  PlayerId UInt [bits "32", range-min "0", range-max "4294967295"]
 
 component Player_id0_UnityEngine__char_46_Transform_2639605840214257464
   rotation Quaternion [bits "32"]
@@ -27,6 +32,8 @@ command MessageBoard_id3_MessageBoard__char_46_AddDeathMessageInternal_8b0fef53_
   source UInt 
   messageSet UInt 
   message UInt 
+
+command Player_id0_PlayerInfo__char_46_AddKillInternal_5279bc1c_9c3c_4812_b835_3461824ce495 [routing "AuthorityOnly"]
 
 command Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c [routing "AuthorityOnly"]
   spawnpoint Int 
@@ -44,6 +51,8 @@ archetype Acid_fbb597bf757ae124a9420852a332f640
   lod 0
     WorldPosition 
       value [compression "None"]
+    Acid_id2_Despawn_6920574429094535455 
+      number [compression "None"]
 
 archetype AreaMover_b4c21c4eeb39050428b8a17907da928c
   lod 0
@@ -80,8 +89,10 @@ archetype Player_3b896e424d82c884d9d345e909e13ea9
     Player_id0_UnityEngine__char_46_Transform_2639605840214257464 
       value [bits "32"]
     Player_id0_PlayerInfo_3474864809680843249 
-      number [bits "32", range-min "0", range-max "4294967295"]
       name [bits "6"]
+      number [bits "32", range-min "-2147483648", range-max "2147483647"]
+      number [bits "32", range-min "-2147483648", range-max "2147483647"]
+      number [bits "32", range-min "0", range-max "4294967295"]
 
 archetype SystemsSynced_ec84610ffed7f904db8ab89dc4452e37
   lod 0

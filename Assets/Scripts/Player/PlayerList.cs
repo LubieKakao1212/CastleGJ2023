@@ -30,13 +30,11 @@ public class PlayerList : MonoBehaviour
         }
     }
 
-
     public static PlayerList Instance { get; private set; }
 
     /// <summary>
     /// Public for coherence only, do NOT touch
     /// </summary>
-    [HideInInspector]
     public uint nextId;
 
     [SerializeField]
@@ -68,14 +66,19 @@ public class PlayerList : MonoBehaviour
 
     public void AssignPlayerIdAndName(CoherenceSync targetPlayerSync, string playerName)
     {
-        sync.SendCommand<PlayerList>(nameof(BindPlayerIdAndName), Coherence.MessageTarget.All, targetPlayerSync, playerName, nextId++);
+        sync.SendCommand<PlayerList>(nameof(BindPlayerIdAndName), Coherence.MessageTarget.All, targetPlayerSync, playerName, nextId);
+        nextId++;
     }
 
     public void BindPlayerIdAndName(CoherenceSync targetPlayerSync, string playerName, uint id)
     {
+        if (PlayersById.ContainsKey(id))
+        {
+            return;
+        }
         PlayerNames.Add(id, playerName);
         PlayersById.Add(id, targetPlayerSync.GetComponent<PlayerInfo>());
-        if (localPlayer.sync == targetPlayerSync)
+        if (localPlayer != null && localPlayer.sync == targetPlayerSync)
         {
             localPlayer.PlayerId = id;
         }

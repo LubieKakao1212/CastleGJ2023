@@ -17,12 +17,14 @@ namespace Coherence.Generated
 
 	public struct Player_id0_PlayerInfo_3474864809680843249 : ICoherenceComponentData
 	{
-		public uint PlayerId;
 		public string PlayerName;
+		public int DeathCountSync;
+		public int KillCountSync;
+		public uint PlayerId;
 
 		public override string ToString()
 		{
-			return $"Player_id0_PlayerInfo_3474864809680843249(PlayerId: {PlayerId}, PlayerName: {PlayerName})";
+			return $"Player_id0_PlayerInfo_3474864809680843249(PlayerName: {PlayerName}, DeathCountSync: {DeathCountSync}, KillCountSync: {KillCountSync}, PlayerId: {PlayerId})";
 		}
 
 		public uint GetComponentType() => Definition.InternalPlayer_id0_PlayerInfo_3474864809680843249;
@@ -33,6 +35,10 @@ namespace Coherence.Generated
 
 		public AbsoluteSimulationFrame Frame;
 	
+		private static readonly int _DeathCountSync_Min = -2147483648;
+		private static readonly int _DeathCountSync_Max = 2147483647;
+		private static readonly int _KillCountSync_Min = -2147483648;
+		private static readonly int _KillCountSync_Max = 2147483647;
 		private static readonly uint _PlayerId_Min = 0;
 		private static readonly uint _PlayerId_Max = 4294967295;
 
@@ -49,13 +55,25 @@ namespace Coherence.Generated
 			if ((mask & 0x01) != 0)
 			{
 				Frame = other.Frame;
-				PlayerId = other.PlayerId;
+				PlayerName = other.PlayerName;
 			}
 			mask >>= 1;
 			if ((mask & 0x01) != 0)
 			{
 				Frame = other.Frame;
-				PlayerName = other.PlayerName;
+				DeathCountSync = other.DeathCountSync;
+			}
+			mask >>= 1;
+			if ((mask & 0x01) != 0)
+			{
+				Frame = other.Frame;
+				KillCountSync = other.KillCountSync;
+			}
+			mask >>= 1;
+			if ((mask & 0x01) != 0)
+			{
+				Frame = other.Frame;
+				PlayerId = other.PlayerId;
 			}
 			mask >>= 1;
 			return this;
@@ -71,14 +89,28 @@ namespace Coherence.Generated
 		{
 			if (bitStream.WriteMask((mask & 0x01) != 0))
 			{
-				Coherence.Utils.Bounds.Check(data.PlayerId, _PlayerId_Min, _PlayerId_Max, "Player_id0_PlayerInfo_3474864809680843249.PlayerId");
-				data.PlayerId = Coherence.Utils.Bounds.Clamp(data.PlayerId, _PlayerId_Min, _PlayerId_Max);
-				bitStream.WriteUIntegerRange(data.PlayerId, 32, 0);
+				bitStream.WriteShortString(data.PlayerName);
 			}
 			mask >>= 1;
 			if (bitStream.WriteMask((mask & 0x01) != 0))
 			{
-				bitStream.WriteShortString(data.PlayerName);
+				Coherence.Utils.Bounds.Check(data.DeathCountSync, _DeathCountSync_Min, _DeathCountSync_Max, "Player_id0_PlayerInfo_3474864809680843249.DeathCountSync");
+				data.DeathCountSync = Coherence.Utils.Bounds.Clamp(data.DeathCountSync, _DeathCountSync_Min, _DeathCountSync_Max);
+				bitStream.WriteIntegerRange(data.DeathCountSync, 32, -2147483648);
+			}
+			mask >>= 1;
+			if (bitStream.WriteMask((mask & 0x01) != 0))
+			{
+				Coherence.Utils.Bounds.Check(data.KillCountSync, _KillCountSync_Min, _KillCountSync_Max, "Player_id0_PlayerInfo_3474864809680843249.KillCountSync");
+				data.KillCountSync = Coherence.Utils.Bounds.Clamp(data.KillCountSync, _KillCountSync_Min, _KillCountSync_Max);
+				bitStream.WriteIntegerRange(data.KillCountSync, 32, -2147483648);
+			}
+			mask >>= 1;
+			if (bitStream.WriteMask((mask & 0x01) != 0))
+			{
+				Coherence.Utils.Bounds.Check(data.PlayerId, _PlayerId_Min, _PlayerId_Max, "Player_id0_PlayerInfo_3474864809680843249.PlayerId");
+				data.PlayerId = Coherence.Utils.Bounds.Clamp(data.PlayerId, _PlayerId_Min, _PlayerId_Max);
+				bitStream.WriteUIntegerRange(data.PlayerId, 32, 0);
 			}
 			mask >>= 1;
 		}
@@ -90,13 +122,23 @@ namespace Coherence.Generated
 	
 			if (bitStream.ReadMask())
 			{
-				val.PlayerId = bitStream.ReadUIntegerRange(32, 0);
+				val.PlayerName = bitStream.ReadShortString();
 				mask |= 0b00000000000000000000000000000001;
 			}
 			if (bitStream.ReadMask())
 			{
-				val.PlayerName = bitStream.ReadShortString();
+				val.DeathCountSync = bitStream.ReadIntegerRange(32, -2147483648);
 				mask |= 0b00000000000000000000000000000010;
+			}
+			if (bitStream.ReadMask())
+			{
+				val.KillCountSync = bitStream.ReadIntegerRange(32, -2147483648);
+				mask |= 0b00000000000000000000000000000100;
+			}
+			if (bitStream.ReadMask())
+			{
+				val.PlayerId = bitStream.ReadUIntegerRange(32, 0);
+				mask |= 0b00000000000000000000000000001000;
 			}
 			return (val, mask, null);
 		}
@@ -106,13 +148,23 @@ namespace Coherence.Generated
 			var val = new Player_id0_PlayerInfo_3474864809680843249();
 			if (bitStream.ReadMask())
 			{
-				val.PlayerId = bitStream.ReadUIntegerRange(32, 0);
+				val.PlayerName = bitStream.ReadShortString();
 				mask |= 0b00000000000000000000000000000001;
 			}
 			if (bitStream.ReadMask())
 			{
-				val.PlayerName = bitStream.ReadShortString();
+				val.DeathCountSync = bitStream.ReadIntegerRange(32, -2147483648);
 				mask |= 0b00000000000000000000000000000010;
+			}
+			if (bitStream.ReadMask())
+			{
+				val.KillCountSync = bitStream.ReadIntegerRange(32, -2147483648);
+				mask |= 0b00000000000000000000000000000100;
+			}
+			if (bitStream.ReadMask())
+			{
+				val.PlayerId = bitStream.ReadUIntegerRange(32, 0);
+				mask |= 0b00000000000000000000000000001000;
 			}
 
 			return (val, mask, 0);

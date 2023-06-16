@@ -1,3 +1,4 @@
+using Coherence.Generated;
 using Coherence.Toolkit;
 using System;
 using System.Collections;
@@ -17,6 +18,7 @@ public class PlayerInfo : MonoBehaviour
         {
             playerName = value;
             NameUpdated?.Invoke(playerName);
+            TrySync();
         } 
     }
 
@@ -41,9 +43,12 @@ public class PlayerInfo : MonoBehaviour
     }
 
     public int KillCount { get; private set; }
+    
     public int DeathCount { get; private set; }
 
-    public uint PlayerId { get; set; }
+    [field: SerializeField]
+    [OnValueSynced(nameof(OnIdSynced))]
+    public uint PlayerId { get; set; } = uint.MaxValue;
 
     public bool isLocal { get; private set; }
     
@@ -53,15 +58,19 @@ public class PlayerInfo : MonoBehaviour
     [SerializeField]
     private CoherenceMonoBridge bridge;
 
-    private string playerName;
+    private string playerName = null;
 
     private void Start()
     {
-        bridge.onConnected.AddListener((_) => 
+        if (sync.AuthorityType != Coherence.AuthorityType.Full)
+        {
+            isLocal = false;
+            return;
+        }
+        bridge.onLiveQuerySynced.AddListener((_) => 
         {
             this.isLocal = sync.AuthorityType == Coherence.AuthorityType.Full;
-            if (isLocal)
-                PlayerList.Instance.SetupLocalPlayerInfo(this);
+            PlayerList.Instance.SetupLocalPlayerInfo(this);
         });
     }
 
@@ -80,5 +89,24 @@ public class PlayerInfo : MonoBehaviour
     {
         KillCount++;
         scoreChanged?.Invoke();
+    }
+
+    public void OnIdSynced(uint oldId, uint newId)
+    {
+        if (oldId != uint.MaxValue)
+        {
+            throw new Exception("stuff");
+        }
+
+        PlayerId = newId;
+        TrySync();
+    }
+
+    private void TrySync()
+    {
+        if (playerName != null && PlayerId != uint.MaxValue)
+        {
+            PlayerList.Instance.BindPlayerIdAndName(sync, playerName, PlayerId);
+        }
     }
 }

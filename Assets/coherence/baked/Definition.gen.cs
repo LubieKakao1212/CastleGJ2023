@@ -16,7 +16,7 @@ namespace Coherence.Generated
 
 	public class Definition : IDefinition
 	{
-		public const string schemaId = "828b2686adbf21383e4776c96d71f4eabef899de";
+		public const string schemaId = "d4e0fa093b470caf0bd5980059d6c7af7e88c2cb";
 		public const uint InternalWorldPosition = 0;
 		public const uint InternalWorldOrientation = 1;
 		public const uint InternalLocalUser = 2;
@@ -119,25 +119,27 @@ namespace Coherence.Generated
 		public const uint InternalGenericFieldULong3 = 99;
 		public const uint InternalGenericFieldColor0 = 100;
 		public const uint InternalGenericFieldColor1 = 101;
-		public const uint InternalBulletTrail_id6_ProjectileTrail_4771486144989202667 = 102;
-		public const uint InternalExplosion_id1_Explosion_1780179320716845973 = 103;
-		public const uint InternalPlayer_id0_PlayerHP_520862196960591170 = 104;
-		public const uint InternalPlayer_id0_PlayerInfo_3474864809680843249 = 105;
-		public const uint InternalPlayer_id0_UnityEngine__char_46_Transform_2639605840214257464 = 106;
-		public const uint InternalSystemsSynced_id4_PlayerList_5830596318896160362 = 107;
-		public const uint InternalArchetypeAcid_fbb597bf757ae124a9420852a332f640_WorldPosition_LOD0 = 108;
-		public const uint InternalArchetypeAreaMover_b4c21c4eeb39050428b8a17907da928c_WorldPosition_LOD0 = 109;
-		public const uint InternalArchetypeBulletTrail_8a9e96fc2de52284c98b4f0d8a3ba0a1_WorldPosition_LOD0 = 110;
-		public const uint InternalArchetypeBulletTrail_8a9e96fc2de52284c98b4f0d8a3ba0a1_BulletTrail_id6_ProjectileTrail_4771486144989202667_LOD0 = 111;
-		public const uint InternalArchetypeExplosion_0c25a96a0fb615348b57d8131f1fc940_WorldPosition_LOD0 = 112;
-		public const uint InternalArchetypeExplosion_0c25a96a0fb615348b57d8131f1fc940_Explosion_id1_Explosion_1780179320716845973_LOD0 = 113;
-		public const uint InternalArchetypeMessageBoard_0adbc65a9c562a945b443b2237375cbd_WorldPosition_LOD0 = 114;
-		public const uint InternalArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_WorldPosition_LOD0 = 115;
-		public const uint InternalArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_Player_id0_PlayerHP_520862196960591170_LOD0 = 116;
-		public const uint InternalArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_Player_id0_UnityEngine__char_46_Transform_2639605840214257464_LOD0 = 117;
-		public const uint InternalArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_Player_id0_PlayerInfo_3474864809680843249_LOD0 = 118;
-		public const uint InternalArchetypeSystemsSynced_ec84610ffed7f904db8ab89dc4452e37_WorldPosition_LOD0 = 119;
-		public const uint InternalArchetypeSystemsSynced_ec84610ffed7f904db8ab89dc4452e37_SystemsSynced_id4_PlayerList_5830596318896160362_LOD0 = 120;
+		public const uint InternalAcid_id2_Despawn_6920574429094535455 = 102;
+		public const uint InternalBulletTrail_id6_ProjectileTrail_4771486144989202667 = 103;
+		public const uint InternalExplosion_id1_Explosion_1780179320716845973 = 104;
+		public const uint InternalPlayer_id0_PlayerHP_520862196960591170 = 105;
+		public const uint InternalPlayer_id0_PlayerInfo_3474864809680843249 = 106;
+		public const uint InternalPlayer_id0_UnityEngine__char_46_Transform_2639605840214257464 = 107;
+		public const uint InternalSystemsSynced_id4_PlayerList_5830596318896160362 = 108;
+		public const uint InternalArchetypeAcid_fbb597bf757ae124a9420852a332f640_WorldPosition_LOD0 = 109;
+		public const uint InternalArchetypeAcid_fbb597bf757ae124a9420852a332f640_Acid_id2_Despawn_6920574429094535455_LOD0 = 110;
+		public const uint InternalArchetypeAreaMover_b4c21c4eeb39050428b8a17907da928c_WorldPosition_LOD0 = 111;
+		public const uint InternalArchetypeBulletTrail_8a9e96fc2de52284c98b4f0d8a3ba0a1_WorldPosition_LOD0 = 112;
+		public const uint InternalArchetypeBulletTrail_8a9e96fc2de52284c98b4f0d8a3ba0a1_BulletTrail_id6_ProjectileTrail_4771486144989202667_LOD0 = 113;
+		public const uint InternalArchetypeExplosion_0c25a96a0fb615348b57d8131f1fc940_WorldPosition_LOD0 = 114;
+		public const uint InternalArchetypeExplosion_0c25a96a0fb615348b57d8131f1fc940_Explosion_id1_Explosion_1780179320716845973_LOD0 = 115;
+		public const uint InternalArchetypeMessageBoard_0adbc65a9c562a945b443b2237375cbd_WorldPosition_LOD0 = 116;
+		public const uint InternalArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_WorldPosition_LOD0 = 117;
+		public const uint InternalArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_Player_id0_PlayerHP_520862196960591170_LOD0 = 118;
+		public const uint InternalArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_Player_id0_UnityEngine__char_46_Transform_2639605840214257464_LOD0 = 119;
+		public const uint InternalArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_Player_id0_PlayerInfo_3474864809680843249_LOD0 = 120;
+		public const uint InternalArchetypeSystemsSynced_ec84610ffed7f904db8ab89dc4452e37_WorldPosition_LOD0 = 121;
+		public const uint InternalArchetypeSystemsSynced_ec84610ffed7f904db8ab89dc4452e37_SystemsSynced_id4_PlayerList_5830596318896160362_LOD0 = 122;
 		public const uint InternalAuthorityRequest = 0;
 		public const uint InternalAuthorityTransfer = 1;
 		public const uint InternalQuerySynced = 2;
@@ -146,9 +148,10 @@ namespace Coherence.Generated
 		public const uint InternalGenericCommand = 5;
 		public const uint InternalAreaMover_id5_MapJoin__char_46_RequestSpawnpoint_7b12f40c_7295_45d5_acf7_e6a4ced8efe2 = 6;
 		public const uint InternalMessageBoard_id3_MessageBoard__char_46_AddDeathMessageInternal_8b0fef53_8cf8_4bfd_b3ff_1294f6e09f55 = 7;
-		public const uint InternalPlayer_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c = 8;
-		public const uint InternalSystemsSynced_id4_PlayerList__char_46_AssignPlayerIdAndName_24e85083_9792_4229_b5a9_280445e1912d = 9;
-		public const uint InternalSystemsSynced_id4_PlayerList__char_46_BindPlayerIdAndName_627a7098_4a40_4ea8_8f49_5d50b2c5e197 = 10;
+		public const uint InternalPlayer_id0_PlayerInfo__char_46_AddKillInternal_5279bc1c_9c3c_4812_b835_3461824ce495 = 8;
+		public const uint InternalPlayer_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c = 9;
+		public const uint InternalSystemsSynced_id4_PlayerList__char_46_AssignPlayerIdAndName_24e85083_9792_4229_b5a9_280445e1912d = 10;
+		public const uint InternalSystemsSynced_id4_PlayerList__char_46_BindPlayerIdAndName_627a7098_4a40_4ea8_8f49_5d50b2c5e197 = 11;
 
 		private static readonly Dictionary<uint, string> componentNamesForTypeIds = new Dictionary<uint, string>() {
 			{ 0, "WorldPosition" },
@@ -253,25 +256,27 @@ namespace Coherence.Generated
 			{ 99, "GenericFieldULong3" },
 			{ 100, "GenericFieldColor0" },
 			{ 101, "GenericFieldColor1" },
-			{ 102, "BulletTrail_id6_ProjectileTrail_4771486144989202667" },
-			{ 103, "Explosion_id1_Explosion_1780179320716845973" },
-			{ 104, "Player_id0_PlayerHP_520862196960591170" },
-			{ 105, "Player_id0_PlayerInfo_3474864809680843249" },
-			{ 106, "Player_id0_UnityEngine__char_46_Transform_2639605840214257464" },
-			{ 107, "SystemsSynced_id4_PlayerList_5830596318896160362" },
-			{ 108, "ArchetypeAcid_fbb597bf757ae124a9420852a332f640_WorldPosition_LOD0" },
-			{ 109, "ArchetypeAreaMover_b4c21c4eeb39050428b8a17907da928c_WorldPosition_LOD0" },
-			{ 110, "ArchetypeBulletTrail_8a9e96fc2de52284c98b4f0d8a3ba0a1_WorldPosition_LOD0" },
-			{ 111, "ArchetypeBulletTrail_8a9e96fc2de52284c98b4f0d8a3ba0a1_BulletTrail_id6_ProjectileTrail_4771486144989202667_LOD0" },
-			{ 112, "ArchetypeExplosion_0c25a96a0fb615348b57d8131f1fc940_WorldPosition_LOD0" },
-			{ 113, "ArchetypeExplosion_0c25a96a0fb615348b57d8131f1fc940_Explosion_id1_Explosion_1780179320716845973_LOD0" },
-			{ 114, "ArchetypeMessageBoard_0adbc65a9c562a945b443b2237375cbd_WorldPosition_LOD0" },
-			{ 115, "ArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_WorldPosition_LOD0" },
-			{ 116, "ArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_Player_id0_PlayerHP_520862196960591170_LOD0" },
-			{ 117, "ArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_Player_id0_UnityEngine__char_46_Transform_2639605840214257464_LOD0" },
-			{ 118, "ArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_Player_id0_PlayerInfo_3474864809680843249_LOD0" },
-			{ 119, "ArchetypeSystemsSynced_ec84610ffed7f904db8ab89dc4452e37_WorldPosition_LOD0" },
-			{ 120, "ArchetypeSystemsSynced_ec84610ffed7f904db8ab89dc4452e37_SystemsSynced_id4_PlayerList_5830596318896160362_LOD0" },
+			{ 102, "Acid_id2_Despawn_6920574429094535455" },
+			{ 103, "BulletTrail_id6_ProjectileTrail_4771486144989202667" },
+			{ 104, "Explosion_id1_Explosion_1780179320716845973" },
+			{ 105, "Player_id0_PlayerHP_520862196960591170" },
+			{ 106, "Player_id0_PlayerInfo_3474864809680843249" },
+			{ 107, "Player_id0_UnityEngine__char_46_Transform_2639605840214257464" },
+			{ 108, "SystemsSynced_id4_PlayerList_5830596318896160362" },
+			{ 109, "ArchetypeAcid_fbb597bf757ae124a9420852a332f640_WorldPosition_LOD0" },
+			{ 110, "ArchetypeAcid_fbb597bf757ae124a9420852a332f640_Acid_id2_Despawn_6920574429094535455_LOD0" },
+			{ 111, "ArchetypeAreaMover_b4c21c4eeb39050428b8a17907da928c_WorldPosition_LOD0" },
+			{ 112, "ArchetypeBulletTrail_8a9e96fc2de52284c98b4f0d8a3ba0a1_WorldPosition_LOD0" },
+			{ 113, "ArchetypeBulletTrail_8a9e96fc2de52284c98b4f0d8a3ba0a1_BulletTrail_id6_ProjectileTrail_4771486144989202667_LOD0" },
+			{ 114, "ArchetypeExplosion_0c25a96a0fb615348b57d8131f1fc940_WorldPosition_LOD0" },
+			{ 115, "ArchetypeExplosion_0c25a96a0fb615348b57d8131f1fc940_Explosion_id1_Explosion_1780179320716845973_LOD0" },
+			{ 116, "ArchetypeMessageBoard_0adbc65a9c562a945b443b2237375cbd_WorldPosition_LOD0" },
+			{ 117, "ArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_WorldPosition_LOD0" },
+			{ 118, "ArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_Player_id0_PlayerHP_520862196960591170_LOD0" },
+			{ 119, "ArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_Player_id0_UnityEngine__char_46_Transform_2639605840214257464_LOD0" },
+			{ 120, "ArchetypePlayer_3b896e424d82c884d9d345e909e13ea9_Player_id0_PlayerInfo_3474864809680843249_LOD0" },
+			{ 121, "ArchetypeSystemsSynced_ec84610ffed7f904db8ab89dc4452e37_WorldPosition_LOD0" },
+			{ 122, "ArchetypeSystemsSynced_ec84610ffed7f904db8ab89dc4452e37_SystemsSynced_id4_PlayerList_5830596318896160362_LOD0" },
 		};
 
 		public static string ComponentNameForTypeId(uint typeId)
@@ -497,6 +502,8 @@ namespace Coherence.Generated
 					return GenericFieldColor0.Deserialize(inProtocolStream);
 				case InternalGenericFieldColor1:
 					return GenericFieldColor1.Deserialize(inProtocolStream);
+				case InternalAcid_id2_Despawn_6920574429094535455:
+					return Acid_id2_Despawn_6920574429094535455.Deserialize(inProtocolStream);
 				case InternalBulletTrail_id6_ProjectileTrail_4771486144989202667:
 					return BulletTrail_id6_ProjectileTrail_4771486144989202667.Deserialize(inProtocolStream);
 				case InternalExplosion_id1_Explosion_1780179320716845973:
@@ -511,6 +518,8 @@ namespace Coherence.Generated
 					return SystemsSynced_id4_PlayerList_5830596318896160362.Deserialize(inProtocolStream);
 				case InternalArchetypeAcid_fbb597bf757ae124a9420852a332f640_WorldPosition_LOD0:
 					return WorldPosition.DeserializeArchetypeAcid_fbb597bf757ae124a9420852a332f640_WorldPosition_LOD0(inProtocolStream);
+				case InternalArchetypeAcid_fbb597bf757ae124a9420852a332f640_Acid_id2_Despawn_6920574429094535455_LOD0:
+					return Acid_id2_Despawn_6920574429094535455.DeserializeArchetypeAcid_fbb597bf757ae124a9420852a332f640_Acid_id2_Despawn_6920574429094535455_LOD0(inProtocolStream);
 				case InternalArchetypeAreaMover_b4c21c4eeb39050428b8a17907da928c_WorldPosition_LOD0:
 					return WorldPosition.DeserializeArchetypeAreaMover_b4c21c4eeb39050428b8a17907da928c_WorldPosition_LOD0(inProtocolStream);
 				case InternalArchetypeBulletTrail_8a9e96fc2de52284c98b4f0d8a3ba0a1_WorldPosition_LOD0:
@@ -851,6 +860,9 @@ namespace Coherence.Generated
 				case InternalGenericFieldColor1:
 					GenericFieldColor1.Serialize((GenericFieldColor1)data, mask, protocolStream);
 					break;
+				case InternalAcid_id2_Despawn_6920574429094535455:
+					Acid_id2_Despawn_6920574429094535455.Serialize((Acid_id2_Despawn_6920574429094535455)data, mask, protocolStream);
+					break;
 				case InternalBulletTrail_id6_ProjectileTrail_4771486144989202667:
 					BulletTrail_id6_ProjectileTrail_4771486144989202667.Serialize((BulletTrail_id6_ProjectileTrail_4771486144989202667)data, mask, protocolStream);
 					break;
@@ -892,6 +904,8 @@ namespace Coherence.Generated
 					return AreaMover_id5_MapJoin__char_46_RequestSpawnpoint_7b12f40c_7295_45d5_acf7_e6a4ced8efe2.Deserialize(bitStream);
 				case Definition.InternalMessageBoard_id3_MessageBoard__char_46_AddDeathMessageInternal_8b0fef53_8cf8_4bfd_b3ff_1294f6e09f55:
 					return MessageBoard_id3_MessageBoard__char_46_AddDeathMessageInternal_8b0fef53_8cf8_4bfd_b3ff_1294f6e09f55.Deserialize(bitStream);
+				case Definition.InternalPlayer_id0_PlayerInfo__char_46_AddKillInternal_5279bc1c_9c3c_4812_b835_3461824ce495:
+					return Player_id0_PlayerInfo__char_46_AddKillInternal_5279bc1c_9c3c_4812_b835_3461824ce495.Deserialize(bitStream);
 				case Definition.InternalPlayer_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c:
 					return Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c.Deserialize(bitStream);
 				case Definition.InternalSystemsSynced_id4_PlayerList__char_46_AssignPlayerIdAndName_24e85083_9792_4229_b5a9_280445e1912d:
@@ -982,6 +996,9 @@ namespace Coherence.Generated
 					break;
 				case Definition.InternalMessageBoard_id3_MessageBoard__char_46_AddDeathMessageInternal_8b0fef53_8cf8_4bfd_b3ff_1294f6e09f55:
 					MessageBoard_id3_MessageBoard__char_46_AddDeathMessageInternal_8b0fef53_8cf8_4bfd_b3ff_1294f6e09f55.Serialize((MessageBoard_id3_MessageBoard__char_46_AddDeathMessageInternal_8b0fef53_8cf8_4bfd_b3ff_1294f6e09f55)data, bitStream);
+					break;
+				case Definition.InternalPlayer_id0_PlayerInfo__char_46_AddKillInternal_5279bc1c_9c3c_4812_b835_3461824ce495:
+					Player_id0_PlayerInfo__char_46_AddKillInternal_5279bc1c_9c3c_4812_b835_3461824ce495.Serialize((Player_id0_PlayerInfo__char_46_AddKillInternal_5279bc1c_9c3c_4812_b835_3461824ce495)data, bitStream);
 					break;
 				case Definition.InternalPlayer_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c:
 					Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c.Serialize((Player_id0_PlayerRespawner__char_46_RespawnInternal_855a22e0_4761_412a_b3b6_4f4db3d1c40c)data, bitStream);
